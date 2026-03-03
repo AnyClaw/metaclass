@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.github.anyclaw.dimens.padding_16
 import com.github.anyclaw.dimens.padding_32
 import com.github.anyclaw.dimens.padding_64
 import metaclass.composeapp.generated.resources.Res
@@ -69,7 +70,7 @@ fun FriendCard(
 ) {
     Card(
         modifier = Modifier
-            .padding(bottom = 16.dp)
+            .padding(bottom = padding_16)
             .fillMaxWidth(),
         onClick = { onClick(friend.id) }
     ) {
@@ -80,7 +81,7 @@ fun FriendCard(
                 modifier = Modifier
                     .size(64.dp)
             )
-            Column(modifier = Modifier.padding(16.dp)) {
+            Column(modifier = Modifier.padding(padding_16)) {
                 Text(friend.username)
                 Text("Был в сети ${friend.lastEntry} минут назад")
             }
