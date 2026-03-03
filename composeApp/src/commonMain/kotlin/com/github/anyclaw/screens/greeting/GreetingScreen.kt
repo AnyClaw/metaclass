@@ -1,4 +1,4 @@
-package com.github.anyclaw.screens
+package com.github.anyclaw.screens.greeting
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,10 +14,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import coil3.compose.AsyncImage
 import com.github.anyclaw.dimens.padding_32
-import com.github.anyclaw.urls.greetingImage
 import metaclass.composeapp.generated.resources.Res
+import metaclass.composeapp.generated.resources.greeting
 import metaclass.composeapp.generated.resources.welcome
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
+
+const val greetingImage = "https://i.pinimg.com/736x/ea/0e/46/ea0e4660412b069442f5600926b18ae0.jpg"
 
 @Composable
 fun GreetingScreen(
@@ -47,7 +50,7 @@ fun GreetingScreen(
             ) {
                 Text(
                     modifier = Modifier,
-                    text = "Welcome to my first project on KMP and CMP!"
+                    text = stringResource(Res.string.greeting)
                 )
             }
             Button(
