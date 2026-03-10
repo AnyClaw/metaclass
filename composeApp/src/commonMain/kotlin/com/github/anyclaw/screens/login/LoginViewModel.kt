@@ -11,6 +11,10 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class LoginViewModel : ViewModel() {
+    val incorrectLoginOrPasswordMessage = "Неверный логин или пароль"
+    val mockUsername = "user"
+    val mockPassword = "password"
+
     private val mutableState = MutableStateFlow(LoginUiState())
 
     val state: StateFlow<LoginUiState>
@@ -42,7 +46,7 @@ class LoginViewModel : ViewModel() {
     fun onLoginClick() {
         val currentState = mutableState.value
 
-        val isValid = currentState.username == "user" && currentState.password == "password"
+        val isValid = currentState.username == mockUsername && currentState.password == mockPassword
 
         if (isValid) {
             viewModelScope.launch {
@@ -52,7 +56,7 @@ class LoginViewModel : ViewModel() {
         else {
             mutableState.update {
                 it.copy(
-                    error = "Неверный логин или пароль",
+                    error = incorrectLoginOrPasswordMessage,
                     isLoginButtonActive = false
                 )
             }
