@@ -30,7 +30,7 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.activity.compose)
-            implementation(libs.coil.network.okhttp)
+            implementation(libs.ktor.client.okhttp)
         }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
@@ -43,6 +43,13 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.androidx.navigation.compose)
             implementation(libs.coil3.coil.compose)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
+            implementation(libs.ktor.client.logging)
+            implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.coil.network.ktor)
+            implementation(libs.napier)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
