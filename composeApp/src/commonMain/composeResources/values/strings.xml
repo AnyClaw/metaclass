@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="greeting">Welcome to my first project on KMP and CMP!</string>
+    <string name="welcome">Welcome</string>
+    <string name="enter_username">Enter username</string>
+    <string name="retry">Повторить</string>
+    <string name="not_found">Ничего не найдено</string>
+    <string name="enter_login">Введите логин</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="incorrect_login_or_password">Неверный логин или пароль</string>
 </resources>

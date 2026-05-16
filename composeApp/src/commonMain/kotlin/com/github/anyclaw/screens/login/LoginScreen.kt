@@ -20,6 +20,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.github.anyclaw.dimens.padding_32
 import com.github.anyclaw.dimens.padding_64
+import metaclass.composeapp.generated.resources.Res
+import metaclass.composeapp.generated.resources.enter_login
+import metaclass.composeapp.generated.resources.enter_password
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun LoginScreen(
@@ -56,7 +60,7 @@ fun LoginScreen(
                     .fillMaxWidth(),
                 value = state.username,
                 onValueChange = viewModel::onUsernameChanged,
-                placeholder = { Text("Введите логин") },
+                placeholder = { Text(stringResource(Res.string.enter_login)) },
                 isError = state.error.isNotBlank()
             )
             Text(
@@ -68,7 +72,7 @@ fun LoginScreen(
                     .fillMaxWidth(),
                 value = state.password,
                 onValueChange = viewModel::onPasswordChange,
-                placeholder = { Text("Введите пароль") },
+                placeholder = { Text(stringResource(Res.string.enter_password)) },
                 visualTransformation = PasswordVisualTransformation(),
                 isError = state.error.isNotBlank()
             )
